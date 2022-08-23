@@ -30,7 +30,7 @@
                 if(this.input.username != "" && this.input.password != "") {
                     console.log(this.usernamefk)
                     if(this.input.username == this.usernamefk && this.input.password ==this.passwordfk) {
-                        this.$emit("authenticated", true);
+                        this.$emit("authenticated", true, "hello");
                         localStorage.setItem("authenticated", true);
                         this.$router.push({ name: "secure" });
                     } else {

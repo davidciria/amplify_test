@@ -23,9 +23,9 @@
             }
         },
         mounted() {
-            axios.get("https://es.wisuki.com/spot/2731/cubelles").then(resp => {
-                console.log(resp['data'])
-                this.data = resp['data']
+            axios.get("https://api.genderize.io/?name=cristina").then(resp => {
+                console.log(resp['data']['gender'])
+                this.data = resp['data']['gender']
             });
             console.log("mounted");
             var auth = localStorage.getItem("authenticated");
@@ -38,8 +38,8 @@
             }
         },
         methods: {
-            setAuthenticated(status) {
-                console.log("Set auth executed");
+            setAuthenticated(status, message) {
+                console.log("Set auth executed", message);
                 this.authenticated = status;
             },
             logout() {
