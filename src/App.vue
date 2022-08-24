@@ -29,6 +29,10 @@
             });
             console.log("mounted");
             var auth = localStorage.getItem("authenticated");
+            if(!auth){
+                auth = false;
+            }
+
             console.log(auth);
             if(auth == "false") {
                 this.$router.push({ name: "login" });
