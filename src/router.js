@@ -6,7 +6,7 @@ const routes = [
     {
         path: '/',
         redirect: {
-            name: "login"
+            name: "secure"
         }
     },
     {
@@ -17,7 +17,13 @@ const routes = [
     {
         path: "/secure",
         name: "secure",
-        component: SecureComponent
+        component: SecureComponent,
+        children: [
+            {
+                path: "/login/login",
+                component: LoginComponent
+            }
+        ]
     }
 ]
 

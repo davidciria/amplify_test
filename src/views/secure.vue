@@ -1,9 +1,7 @@
 <template>
     <div id="secure">
-        <h1>Secure Area</h1>
-        <p>
-            This is a secure area
-        </p>
+      <sidebar-menu :menu="menu" />
+      <router-view />
     </div>
 </template>
 
@@ -18,17 +16,17 @@
             hiddenOnCollapse: true
           },
           {
-            href: '/',
+            href: '/secure',
             title: 'Dashboard',
-            icon: 'fa fa-user'
+            icon: 'bi bi-1-circle'
           },
           {
-            href: '/charts',
+            href: '/login/login',
             title: 'Charts',
             icon: 'fa fa-chart-area',
             child: [
               {
-                href: '/charts/sublink',
+                href: '/secure',
                 title: 'Sub Link'
               }
             ]

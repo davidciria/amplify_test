@@ -1,5 +1,4 @@
 <template>
-    <sidebar-menu :menu="menu" />
     <authenticator>
         <button @click="signOut">Sign Out</button>
         <div id="app">
@@ -37,17 +36,17 @@ export default {
                     hiddenOnCollapse: true
                 },
                 {
-                    href: '/',
+                    href: '/login',
                     title: 'Dashboard',
                     icon: 'fa fa-user'
                 },
                 {
-                    href: '/charts',
+                    href: '/secure',
                     title: 'Charts',
                     icon: 'fa fa-chart-area',
                     child: [
                         {
-                            href: '/charts/sublink',
+                            href: '/secure',
                             title: 'Sub Link'
                         }
                     ]
@@ -68,7 +67,7 @@ export default {
 
         console.log(auth);
         if (auth == "false") {
-            this.$router.push({ name: "login" });
+            this.$router.push({ name: "secure" });
         } else {
             this.authenticated = true;
             this.$router.push({ name: "secure" });

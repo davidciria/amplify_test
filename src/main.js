@@ -10,6 +10,7 @@ Amplify.configure(awsconfig);
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
-// Vue.use(VueSidebarMenu)
-
-createApp(App).use(router).use(VueSidebarMenu).mount('#app')
+const app = createApp(App)
+app.use(VueSidebarMenu)
+app.use(router)
+app.mount("#app")
