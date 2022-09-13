@@ -6,4 +6,10 @@ import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 Amplify.configure(awsconfig);
 
-createApp(App).use(router).mount('#app')
+// import Vue from 'vue'
+import VueSidebarMenu from 'vue-sidebar-menu'
+import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+
+// Vue.use(VueSidebarMenu)
+
+createApp(App).use(router).use(VueSidebarMenu).mount('#app')

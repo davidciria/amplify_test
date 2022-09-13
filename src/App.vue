@@ -1,4 +1,5 @@
 <template>
+    <sidebar-menu :menu="menu" />
     <authenticator>
         <button @click="signOut">Sign Out</button>
         <div id="app">
@@ -29,7 +30,29 @@ export default {
                 username: "nraboy",
                 password: "password"
             },
-            data: "null"
+            data: "null",
+            menu: [
+                {
+                    header: 'Main Navigation',
+                    hiddenOnCollapse: true
+                },
+                {
+                    href: '/',
+                    title: 'Dashboard',
+                    icon: 'fa fa-user'
+                },
+                {
+                    href: '/charts',
+                    title: 'Charts',
+                    icon: 'fa fa-chart-area',
+                    child: [
+                        {
+                            href: '/charts/sublink',
+                            title: 'Sub Link'
+                        }
+                    ]
+                }
+            ]
         }
     },
     mounted() {
